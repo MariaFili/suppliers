@@ -9,15 +9,16 @@ const indexRouter = require('./routes/index');
 const entriesRouter = require('./routes/entries');
 const registrationRouter = require('./routes/registration');
 const signinRouter = require('./routes/signin');
+const categoryRouter = require("./routes/category");
+const articleRouter = require("./routes/article");
 
 const app = express();
 
 const mongoose = require("mongoose");
-
-
-// Подключаем mongoose.
-
-mongoose.connect('mongodb://localhost:27017/broccoli', { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/tender", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -45,6 +46,8 @@ app.use('/', indexRouter);
 app.use('/entries', entriesRouter);
 app.use('/registration', registrationRouter);
 app.use('/signin', signinRouter);
+app.use('/category', categoryRouter);
+app.use('/article', articleRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

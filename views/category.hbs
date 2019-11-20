@@ -1,0 +1,22 @@
+<h1>{{this.name}}</h1>
+
+<p>Категория</p>
+ <input type="checkbox" name="option2" value="a2">Только актуальные <Br>
+<p>Выгрузка из Монги всех объявлений каждой категории</p>
+<a href="/article">Первое объявление </a>
+
+
+<ul>
+  {{#each this.advertisements}}
+  <li>
+    <div>
+      <a>
+        <a href="/{{this.category}}/{{this.id}}">Name: {{this.title}} </a>
+        <div>Description: {{this.description}}</div>
+        <div>Location: {{this.district}}</div>
+        <div>Expiring date: {{this.expDate}}</div>
+    </div>
+  </li>
+  </div>
+  {{/each}}
+</ul>
