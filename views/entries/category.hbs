@@ -1,0 +1,14 @@
+<h1>Recommended for you</h1>
+
+<ul>
+  {{#each article}}
+  <li>
+    <div>
+      <a>
+        <a href="/{{this.category}}/{{this.id}}">Name: {{this.name}} </a>
+        <div>Price: {{this.price}}</div>
+    </div>
+  </li>
+  </div>
+  {{/each}}
+</ul>
