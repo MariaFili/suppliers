@@ -1,4 +1,4 @@
-<h1>{{this.name}}</h1>
+{{!-- <h1>{{this.name}}</h1> --}}
 
 <h2>Заказ</h2>
 <p>Описание заказа</p>
@@ -17,14 +17,14 @@
 
 
 <ul>
-    {{#each this.advertisements}}
+    {{#each advertisement}}
     <li>
         <div>
             <a>
-                <a href="/{{this.category}}/{{this.id}}">Name: {{this.title}} </a>
-                <div>Description: {{this.description}}</div>
-                <div>Location: {{this.district}}</div>
-                <div>Expiring date: {{this.expDate}}</div>
+                <a href="/{{advertisement.category}}/{{advertisement.id}}">Name: {{advertisement.title}} </a>
+                <div>Description: {{advertisement.description}}</div>
+                <div>Location: {{advertisement.district}}</div>
+                <div>Expiring date: {{advertisement.expDate}}</div>
         </div>
     </li>
     </div>

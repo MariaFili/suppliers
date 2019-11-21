@@ -24,6 +24,8 @@ router.get('/', async function (req, res, next) {
     
 });
 
+
+
 router.post('/', async function (req, res, next) {
     newEntry = new Entry({ title: req.body.title, body: req.body.body });
     res.redirect(`/entries/${newEntry.id}`);

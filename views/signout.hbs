@@ -1,0 +1,17 @@
+<h1>Вы уверены что хотите выйти из системы?</h1>
+
+{{#if errors}}
+    <span>Something went wrong:</span>
+    <ul class="error-list pad-b-2">
+        {{#each errors as |error|}}
+            <li class="error-item">{{error}}</li>
+        {{/each}}
+    </ul>
+{{/if}}
+
+
+<form method="post" action="/signout/redir">
+
+
+  <input type="submit" value="Sign out" tabindex="3" class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
+</form>
