@@ -1,28 +1,23 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const User = require('../models/users');
-
-
+const User = require("../models/users");
 
 // registration
-router.get('/',async function (req, res) {
-    // console.log('here in profile page')
-    let username = req.cookies['user']
-    console.log('username', username);
-    
-    let user = await User.findOne({ login: username })
-    console.log("user", user);
-    res.render("yourprofile", {
-      companyname: user.info.companyname,
-      phone: user.info.phone,
-      email: user.info.email,
-      inn: user.info.inn
-    });
+router.get("/", async function(req, res) {
+  // console.log('here in profile page')
+  let username = req.cookies["user"];
+  let user = await User.findOne({ login: username });
+
+  res.render("yourprofile", {
+    companyname: user.info.companyname,
+    phone: user.info.phone,
+    email: user.info.email,
+    inn: user.info.inn
+  });
 });
 
-router.post('/redir', async function (req, res, next) {
-
-    res.redirect(`../yourorders`);
+router.post("/redir", async function(req, res, next) {
+  res.redirect(`../yourorders`);
 });
 
 module.exports = router;

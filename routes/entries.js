@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Entry = require("../models/entry");
 const Advertisement = require("../models/ads");
-console.log("started entries");
+
 
 // entries
 router.get("/", async function(req, res, next) {
@@ -17,10 +17,8 @@ router.get("/", async function(req, res, next) {
       uniqueEntriesObj.push(obj)
     }
   });
-  console.log("entries", entries);
-  console.log("uniqueEntries", uniqueEntries);
+  
   if (typeof req.cookies.user !== "undefined") {
-    console.log(req.cookies.user);
 
     res.render("entries/index", {
       // entries,

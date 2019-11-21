@@ -1,25 +1,5 @@
 <h1>{{this.name}}</h1>
 
-
- {{!-- <input type="checkbox" name="option2" value="a2">Только актуальные <Br> --}}
-{{!-- <p>Выгрузка из Монги всех объявлений данного заказчика</p> --}}
-{{!-- <a href="/article">Первое объявление </a> --}}
-
-
-{{!-- <ul>
-  {{#each this.advertisements}}
-  <li>
-    <div>
-      <a>
-        <a href="/{{this.category}}/{{this.id}}">Name: {{this.title}} </a>
-        <div>Description: {{this.description}}</div>
-        <div>Location: {{this.district}}</div>
-        <div>Expiring date: {{this.expDate}}</div>
-    </div>
-  </li>
-  </div>
-  {{/each}}
-</ul> --}}
   <h2>Мои заказы</h2>
 <div> {{#each addsinfo}}
 
@@ -27,7 +7,9 @@
   <table class="table table-striped table-bordered" style="width:100%">
     <thead class="thead-dark">
     <tr>
-      <th>{{this.title}}</th>
+      <th><a href="/ad/{{this.id}}">
+        {{this.title}}
+      </a></th>
       <th>{{this.district}}</th>
       <th>{{this.city}}</th>
       {{!-- <th><button>Посмотреть отклики</button></th> --}}
@@ -38,7 +20,13 @@
     <tr>
       <td>{{this.authorName}}</td >
       <td>{{this.price}}</td>
-      <td><button>Выбрать исполнителя</button></td>
+      <td>
+        
+<form method="post" action="/ad/{{this.id}}"> <input type="submit" value="Выбрать поставщика" tabindex="3"
+        class={{this.id}}>
+</form>
+
+      </td>
     </tr>
 {{/each}}
   </table>

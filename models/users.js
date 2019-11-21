@@ -3,6 +3,8 @@ const moment = require("moment");
 const { ObjectId } = mongoose.Schema.Types;
 const Advertisement = require("./ads");
 const Response = require("./responses");
+// const User = require("../models/users");
+
 
 const userSchema = new mongoose.Schema({
   login: String,
@@ -31,7 +33,7 @@ userSchema.methods.addAdvertisement = async function(
     description: description,
     category: category,
     author: this.id,
-    // executor: null,
+    executor: null,
     district: district,
     city: city,
     responses: [],
@@ -60,18 +62,18 @@ userSchema.methods.addResponse = async function(price, advertisement_id) {
   await add.save();
 };
 
-userSchema.methods.chooseSupplier = async function(
+userSchema.statics.chooseSupplier = async function(
   advertisement_id,
   supplier_id
 ) {
   const add = await Advertisement.findById(advertisement_id);
   add.executor = supplier_id;
   await add.save();
-// const supplier = await Advertisement.findById(advertisement_id);
-//   approvedAds;
-//    await supplier.save();
-  // todo
 
+  const supplier = await this.findById(supplier_id);
+  supplier.approvedAds.push(advertisement_id);
+  await supplier.save();
+  
 };
 
 module.exports = mongoose.model("User", userSchema);

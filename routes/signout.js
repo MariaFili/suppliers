@@ -7,8 +7,7 @@ router.get("/", function(req, res) {
 
 router.post("/redir", async function(req, res, next) {
   res.clearCookie("user");
-  // res.cookie('user', undefined);
-  // if (typeof req.cookies.user!=="undefined"){}
+
   res.redirect(`../entries`);
 });
 
