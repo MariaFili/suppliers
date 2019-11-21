@@ -17,11 +17,11 @@ const yourordersRouter = require("./routes/yourorders");
 
 const app = express();
 
-const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/tender", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+// const mongoose = require("mongoose");
+// mongoose.connect("mongodb://localhost/tender", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

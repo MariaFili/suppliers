@@ -6,17 +6,29 @@ console.log('started entries');
 
 // entries
 router.get('/', async function (req, res, next) {
-    let entries = await Entry.mostRecent();
+    let entries = await Advertisement.find({}, { category: 1, _id: 0 });
+  let uniqueEntries = [];
+  entries.map(obj => {
+    if (!uniqueEntries.includes(obj.category)) {
+      uniqueEntries.push(obj.category);
+    }
+  });
+  console.log("entries", entries);
+  console.log("uniqueEntries", uniqueEntries);
     if (typeof req.cookies.user!=="undefined"){
         console.log(req.cookies.user);
         
-        res.render('entries/index', { entries, Logger: "Sign out", 
+        res.render('entries/index', {
+            //  entries, 
+             Logger: "Sign out", 
         loginout:"/signout",
         yourprofile:"/yourprofile",
         yourname:req.cookies.user });
     }
    else{
-    res.render('entries/index', { entries, Logger: "Register", 
+    res.render('entries/index', {
+        //  entries,
+          Logger: "Register", 
     loginout:"/registration",
     yourprofile:"/signin",
     yourname:"Sign in"}); 
@@ -26,10 +38,10 @@ router.get('/', async function (req, res, next) {
 
 
 
-router.post('/', async function (req, res, next) {
-    newEntry = new Entry({ title: req.body.title, body: req.body.body });
-    res.redirect(`/entries/${newEntry.id}`);
-});
+// router.post('/', async function (req, res, next) {
+//     newEntry = new Entry({ title: req.body.title, body: req.body.body });
+//     res.redirect(`/entries/${newEntry.id}`);
+// });
 
 //new entries
 router.get('/new', function (req, res, next) {
