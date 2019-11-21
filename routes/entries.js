@@ -53,8 +53,8 @@ router.get("/new", function(req, res, next) {
 });
 
 //detail entry
-router.get("/:id", async function(req, res, next) {
-  let entry = await Entry.findById(req.params.id);
+router.get("/:id", async function (req, res, next) {
+  // let entry = await Entry.findById(req.params.id);
   res.render("entries/show", { entry });
 });
 

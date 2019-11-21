@@ -47,6 +47,7 @@ userSchema.methods.addAdvertisement = async function(
 userSchema.methods.addResponse = async function(price, advertisement_id) {
   let ResponseGenerated = new Response({
     author: this.id,
+    authorName: this.info.companyname,
     advertisement: advertisement_id,
     price: price
   });
