@@ -4,10 +4,12 @@
 <main role="main">
   <td width="400" valign="top">
   <ul class="entries-list no-bullets no-padding">
+    {{#each listCategories}}
       <li class="entry-item pad-b-4">
-        <a class="mainpage" method="POST" href="/category">Строительство</a>
+        <a class="mainpage" href="/{{this.id}}">{{this.category}}</a>
       </li>
-       <li class="entry-item pad-b-4">
+      {{/each }}
+       {{!-- <li class="entry-item pad-b-4">
         <a class="mainpage" href="/category">Полиграфия</a>
       </li>
        <li class="entry-item pad-b-4">
@@ -31,7 +33,7 @@
       </li>
        <li class="entry-item pad-b-4">
         <a class="mainpage" href="/category">Сельское хозяйство</a>
-      </li>
+      </li> --}}
   </ul>
   </td>
 </main>
