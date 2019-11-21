@@ -11,8 +11,8 @@
 /* element styling */
 html {
   height: 100%;
-  background-color: #32bb7d;
-  background: url(../images/diamond-bg.jpg);
+  background-color: #3294bb;
+  background: url(../images/font.jpg);
   background-attachment: fixed;
   line-height: 1.4;
 }
@@ -22,12 +22,17 @@ body {
 }
 
 a {
-  color: #32bb7d;
+  color: rgb(121, 143, 214);
+  text-decoration: none;
+}
+
+.mainpage {
+  color: white;
   text-decoration: none;
 }
 
   a:hover {
-    color: #6ec7a5;
+    color: white;
     text-decoration: underline;
   }
 
@@ -35,6 +40,9 @@ input[type=text], input[type=password], textarea {
   color: #05724f;
 }
 
+/* .mainhedder{
+  color: #709bd3;
+} */
 
 /* positioning */
 .block {
@@ -60,15 +68,18 @@ input[type=text], input[type=password], textarea {
 
 /* formatting */
 .bg-dk-green {
-  background-color: #05724f;
+  background-color: #709bd3;
 }
 
 .bg-white {
   background-color: #fefefe;
 }
 
+h3{
+  margin-bottom: 70px;
+}
 .button {
-  background: #32bb7d;
+  background:rgb(0, 52, 148);
   color: #fefefe;
   padding: 1em;
   text-decoration: none;
@@ -291,5 +302,5 @@ input[type=text], input[type=password], textarea {
   width:160px;
 }
 .newbut {
-  color: black;
+  color: rgb(83, 133, 209);
 }
