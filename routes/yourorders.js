@@ -3,7 +3,7 @@ const router = express.Router();
 const User = require("../models/users");
 const Advertisement = require("../models/ads");
 
-// registration
+//
 router.get("/", async function(req, res) {
   let username = req.cookies["user"];
 
@@ -24,8 +24,19 @@ router.get("/", async function(req, res) {
 });
 
 router.get("/addorder", async function(req, res) {
+  res.render("addorder", {});
+});
 
-  res.render("addorder", { });
+router.post("/", async function(req, res) {
+  let userFound = await User.findOne({ login: req.cookies["user"] });
+  await userFound.addAdvertisement(
+    req.body.title,
+    req.body.description,
+    req.body.category,
+    req.body.district,
+    req.body.city
+  );
+  res.redirect("/yourorders");
 });
 
 module.exports = router;
