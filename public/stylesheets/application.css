@@ -310,3 +310,55 @@ h3{
 .newbut {
   color: rgb(83, 133, 209);
 }
+
+table {
+  width: 100%;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+  font-size: 14px;
+
+  text-align: center;
+  }
+  th, td:first-child {
+  background: #AFCDE7;
+  color: white;
+  padding: 10px 20px;
+  width: 150px;
+  }
+  th, td {
+    width: 150px;
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+  border-color: white;
+  }
+  td {
+  background: #D8E6F3;
+  color: rgb(29, 26, 26);
+  }
+  th:first-child, td:first-child {
+  text-align: left;
+  
+  }
+  #tableinp {
+    width: 120px;
+    font-size: x-small;
+  }
+
+  .city {
+    font-size: x-small;
+  }
+
+  .maintable2{
+border: none;
+  }
+
+  .column {
+    -webkit-columns: 300px 2;
+    -moz-columns: 300px 2;
+    columns: 300px 2;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    -webkit-column-rule: 1px ;
+    -moz-column-rule: 1px ;
+    column-rule: 1px ;
+  }
