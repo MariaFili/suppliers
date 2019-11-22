@@ -20,4 +20,11 @@ router.post("/redir", async function(req, res, next) {
   res.redirect(`../yourorders`);
 });
 
+router.post("/upload", async function (req, res, next) {
+  console.log("in upload post");
+
+  
+  // res.redirect(`../yourorders`);
+});
+
 module.exports = router;

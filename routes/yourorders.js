@@ -23,4 +23,9 @@ router.get("/", async function(req, res) {
   res.render("yourorders", { addsinfo });
 });
 
+router.get("/addorder", async function(req, res) {
+
+  res.render("addorder", { });
+});
+
 module.exports = router;
