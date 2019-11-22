@@ -9,8 +9,6 @@
     </ul>
 {{/if}}
 
-
-<form method="post" action="/yourprofile/redir">
   <label>Компания</label>
   <div id="one" name="company" type="text" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2 userdata">{{companyname}}</div>
 
@@ -23,8 +21,14 @@
   <label for="body-textarea" class="block mar-b-1">ИНН</label>
   <div id="one" name="company" type="text" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2 userdata" >{{inn}}</div>
 
+<form method="post" action="/yourprofile/redir">
   <input type="submit" value="Размещенные мной заказы" tabindex="3" class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
 </form>
-<form method="get" action="/yourprofile/yourresponses"> <input type="submit" value="Мои отклики на чужие заказы" tabindex="3"
-        class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
+
+<form method="get" action="/yourprofile/yourresponses"> 
+<input type="submit" value="Мои отклики на чужие заказы" tabindex="3" class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
+</form>
+
+<form method="get" action="/yourprofile/addorder"> 
+<input type="submit" value="Создать новый заказ" tabindex="3" class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
 </form>

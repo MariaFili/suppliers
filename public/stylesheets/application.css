@@ -410,3 +410,7 @@ border: none;
   width: 80%;
   
 }
+.maintable3{
+  border-right: none;
+  border-left: none;
+    }
