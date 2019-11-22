@@ -1,27 +1,25 @@
+<form action="/yourorders">
 
-<form  action="/yourorders">
-    <label >
-        <input type="text" name="name" value="{{this.name}}">
-        <span>Название </span>
-    </label>
+    <label for="body-textarea" class="block mar-b-1">Название заказа</label>
+    <input class="orderinp" type="text" value="{{this.name}}">
 
-     <label >
-        <input type="text" name="name" value="{{this.name}}">
-        <span>Описание </span>
-    </label>
+    <label for="body-textarea" class="">Описание</label>
+    <input class="orderinp descr" type="text" value="{{this.description}}">
+    
 
-      <label >
-        <input type="text" name="name" value="{{this.name}}">
-        <span>Категория </span>
-    </label>
 
-  <label >
-        <input type="text" name="name" value="{{this.name}}">
-        <span>Регион </span>
-    </label>
-      <label >
-        <input type="text" name="name" value="{{this.name}}">
-        <span>Город</span>
-    </label>
-    <button type="submit" class="button dark">Опубликовать</button>
+    <label for="body-textarea" class="block mar-b-1">Категория</label>
+    <input class="orderinp" type="text" value="{{this.category}}">
+   
+
+
+    <label for="body-textarea" class="block mar-b-1">Регион </label>
+    <input class="orderinp" type="text" value="{{this.district}}">
+    
+
+    <label for="body-textarea" class="block mar-b-1">Город</label>
+    <input class="orderinp" type="text" value="{{this.city}}">
+    
+
+    <input type="submit" value="Опубликовать заказ" tabindex="3" class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
 </form>

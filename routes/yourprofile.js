@@ -27,4 +27,9 @@ router.post("/upload", async function (req, res, next) {
   // res.redirect(`../yourorders`);
 });
 
+router.get("/yourresponses", async function(req, res) {
+
+  res.render("yourresponses", { });
+});
+
 module.exports = router;
