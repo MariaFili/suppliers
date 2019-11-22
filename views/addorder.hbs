@@ -1,4 +1,59 @@
-<form action="/yourorders">
+<h2>Опубликовать заказ</h2>
+
+<form  action="/yourorders" method="post">
+
+    <label for="body-textarea" class="block mar-b-1">Название заказа</label>
+        <input class="orderinp" type="text" name="title" value="{{this.name}}">
+       
+    
+
+     <label for="body-textarea" class="">Описание</label>
+        <input class="orderinp descr" type="text" name="description" value="{{this.name}}">
+        
+    
+
+      <label for="body-textarea" class="block mar-b-1">Категория</label>
+        <input class="orderinp" type="text" name="category" value="{{this.name}}">
+        
+    
+
+  <label for="body-textarea" class="block mar-b-1">Регион </label>
+        <input class="orderinp" type="text" name="district" value="{{this.name}}">
+        
+    
+      <label for="body-textarea" class="block mar-b-1">Город</label>
+        <input class="orderinp" type="text" name="city" value="{{this.name}}">
+        
+    
+    <button type="submit" tabindex="3" class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">Опубликовать</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{{!-- <form action="/yourorders">
 
     <label for="body-textarea" class="block mar-b-1">Название заказа</label>
     <input class="orderinp" type="text" value="{{this.name}}">
@@ -21,30 +76,4 @@
     <input class="orderinp" type="text" value="{{this.city}}">
     
 
-    <input type="submit" value="Опубликовать заказ" tabindex="3" class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
-<form  action="/yourorders" method="post">
-    <label >
-        <input type="text" name="title" value="{{this.name}}">
-        <span>Название </span>
-    </label>
-
-     <label >
-        <input type="text" name="description" value="{{this.name}}">
-        <span>Описание </span>
-    </label>
-
-      <label >
-        <input type="text" name="category" value="{{this.name}}">
-        <span>Категория </span>
-    </label>
-
-  <label >
-        <input type="text" name="district" value="{{this.name}}">
-        <span>Регион </span>
-    </label>
-      <label >
-        <input type="text" name="city" value="{{this.name}}">
-        <span>Город</span>
-    </label>
-    <button type="submit" class="button dark">Опубликовать</button>
-</form>
+    <input type="submit" value="Опубликовать заказ" tabindex="3" class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline"> --}}
