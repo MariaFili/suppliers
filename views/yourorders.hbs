@@ -1,14 +1,20 @@
 <h1>{{this.name}}</h1>
 
   <h2>Мои заказы</h2>
+  <table>
+    <tr>
+      <th class="title">Объявление:</th>
+      <th class="title">Округ:</th>
+      <th class="title">Город:</th>
+    </tr>
+  </table>
 <div> {{#each addsinfo}}
 
 
-  <table class="maintable">
+  <table>
     
-    <tr class="maintr">
+    <tr>
       <th><a href="/ad/{{this.id}}">
-      
         {{this.title}}
       </a></th>
       <th>{{this.district}}</th>
@@ -18,12 +24,13 @@
 
 {{#each this.responses}}
 
-    <tr class="maintable">
-      <td>{{this.authorName}}</td >
+    <tr>
+     
+      <td class="bright">{{this.authorName}}</td >
       <td>{{this.price}}</td>
-      <td>
+      <td class="change">
         
-<form method="post" action="/ad/{{this.id}}"> <input id="tableinp" type="submit" value="Выбрать поставщика" tabindex="3"
+<form  method="post" action="/ad/{{this.id}}"> <input class="change" id="tableinp2" type="submit" value="Выбрать поставщика" tabindex="3"
         class={{this.id}}>
 </form>
 
@@ -33,3 +40,7 @@
   </table>
   {{/each}}
 </div>
+
+<form method="post" action="/addorder"> <input type="submit" value="Создать новый заказ" tabindex="3"
+        class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
+</form>
