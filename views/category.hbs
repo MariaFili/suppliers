@@ -2,14 +2,13 @@
 <h2>Категория {{name}}</h2>
 
 
-
   <div>{{#each allCategories}}
   <table class="maintable2">
     
     <tr class="maintable2">
 
       <th class="maintable2"> 
-        <a href="/ad/{{this.id}}">
+        <a href="/ad/{{this._id}}">
         {{this.title}}
       </a></th>
       <th class="maintable2">{{this.author.info.companyname}}</th>
