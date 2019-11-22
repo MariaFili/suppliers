@@ -21,7 +21,7 @@ router.post("/redir", async function(req, res, next) {
 });
 
 router.post("/upload", async function (req, res, next) {
-  console.log("in upload post");
+  // console.log("in upload post");
 
   
   // res.redirect(`../yourorders`);
