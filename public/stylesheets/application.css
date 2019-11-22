@@ -361,4 +361,22 @@ border: none;
     -webkit-column-rule: 1px ;
     -moz-column-rule: 1px ;
     column-rule: 1px ;
+    
+  }
+
+  .entytext {
+    font-size: large;
+  }
+
+  .personal {
+    font-family: Geneva, Arial, Helvetica, sans-serif;
+  }
+
+  label{
+    font-weight: bold;
+    color: #fff;
+    font-size: 20px;
+  }
+  .userdata {
+    color: black
   }
