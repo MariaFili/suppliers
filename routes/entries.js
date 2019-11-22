@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Entry = require("../models/entry");
 const Advertisement = require("../models/ads");
-console.log("started entries");
+
 
 // entries
 router.get("/", async function(req, res, next) {
@@ -17,10 +17,8 @@ router.get("/", async function(req, res, next) {
       uniqueEntriesObj.push(obj)
     }
   });
-  console.log("entries", entries);
-  console.log("uniqueEntries", uniqueEntries);
+  
   if (typeof req.cookies.user !== "undefined") {
-    console.log(req.cookies.user);
 
     res.render("entries/index", {
       // entries,
@@ -53,8 +51,8 @@ router.get("/new", function(req, res, next) {
 });
 
 //detail entry
-router.get("/:id", async function(req, res, next) {
-  let entry = await Entry.findById(req.params.id);
+router.get("/:id", async function (req, res, next) {
+  // let entry = await Entry.findById(req.params.id);
   res.render("entries/show", { entry });
 });
 
