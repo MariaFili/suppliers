@@ -8,11 +8,11 @@ router.get("/", function(req, res) {
 });
 
 router.post("/redir", async function(req, res, next) {
-  console.log("here in registration/redir");
-  console.log("body", req.body);
+  // console.log("here in registration/redir");
+  // console.log("body", req.body);
 
-    res.cookie("user", req.body.login);
-   //  чтобы true/false не ломалось 
+  res.cookie("user", req.body.login);
+  //  чтобы true/false не ломалось
   let buyerInput = false;
   if (req.body.buyer === true) {
     buyerInput = true;

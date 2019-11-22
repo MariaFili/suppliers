@@ -7,7 +7,7 @@ router.get("/", function(req, res) {
 });
 
 router.post("/redir", async function(req, res, next) {
-  console.log(req.body);
+  // console.log(req.body);
   let usernameInput = req.body.username;
   let passwordInput = req.body.password;
   let founduser = await User.findOne({ login: usernameInput });

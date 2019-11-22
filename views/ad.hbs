@@ -3,14 +3,27 @@
 <h2>{{advertisement.title}}</h2>
 <p>{{advertisement.description}}</p>
 {{!-- <p>{{this.author.info.companyname}}</p> --}}
-<p>{{advertisement.author.info}} (СКРЫТЫЙ)</p>
-<form method="???" action="???"> <input type="submit" value="Выполнить заказ(скрытый)" tabindex="3"
-        class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
-</form>
+
+ {{#if isChosen}}
+<p>Контактная информация заказчика, доступная только вам: {{advertisement.author.info}}</p>
+<button>Связаться с поставщиком</button>
+{{/if}}
+
+ {{#if isAuthor}}
+<p>Вы автор объявления и не можете откликнуться на него</p>
+ {{else}}
  {{#if loggedout}}
-    
 <form method="get" action="/registration"> <input type="submit" value="Зарегистрируйтесь, чтобы откликнуться на заказ" tabindex="3"
         class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
 </form>
-  {{/if}}
+
+ {{else}}
+  {{#if canResponse}}
+<form method="get" action="/ad/{{advertisement.id}}/respond"> <input type="submit" value="Выполнить заказ" tabindex="3"
+        class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
+ {{else}}
+</form>
 <p class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">Вы уже откликнулись на этот заказ(скрытый)</p>
+{{/if}}
+{{/if}}
+{{/if}}
