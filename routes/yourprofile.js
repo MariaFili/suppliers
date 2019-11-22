@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../models/users");
 const ResponseCollection = require("../models/responses");
+const moment = require("moment");
 
 // registration
 router.get("/", async function(req, res) {
@@ -39,8 +40,8 @@ router.get("/yourresponses", async function(req, res) {
     let addId = fullreponse.advertisement.id;
     let valueBoolean = false;
 
-    console.log("userFound.approvedAds", userFound.approvedAds);
-    console.log("addId", addId);
+    // console.log("userFound.approvedAds", userFound.approvedAds);
+    // console.log("addId", addId);
     userFound.approvedAds.map(idobj => {
       if ("" + idobj === "" + addId) {
         // console.log("Юзер исполнитель по объявлению", addId);
@@ -50,7 +51,30 @@ router.get("/yourresponses", async function(req, res) {
 
     fullreponse = fullreponse.toObject();
     fullreponse.isChosen = valueBoolean;
-    fullUserResponses.push(fullreponse);
+
+    // покажем только те которые по времени походят или была договоренност
+    // если был выбран исполнитель - то сделка останется висеть в кабинете
+    if (fullreponse.advertisement.executor !== null) {
+      console.log("found add that will not be removed after expiration");
+     fullUserResponses.push(fullreponse);
+    } else {
+      // проверка на время - показываем только свежие объявления
+      let timetoCheck = fullreponse.advertisement.expdate;
+
+      // time comparasion
+      const todayTime = moment();
+      const dateExpiry = moment(timetoCheck);
+      // будущее время больше чем время сейчас
+      // если дата окончания < чем время сейчас, значит не выводим объявление
+      // console.log("Актуально ли обновление:", dateExpiry >= todayTime);
+
+      if (dateExpiry >= todayTime) {
+        // timeToDisplay = moment(timetoCheck).format("MMMM DD YYYY, h:mm");
+        // objectMongo["expdate"] = timeToDisplay;
+        fullUserResponses.push(fullreponse);
+      }
+    }
+    // fullUserResponses.push(fullreponse);
   }
 
   res.render("yourresponses", {
