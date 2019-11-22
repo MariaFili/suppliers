@@ -83,4 +83,8 @@ router.get("/yourresponses", async function(req, res) {
   });
 });
 
+router.get("/addorder", async function(req, res) {
+  res.render("addorder", {});
+});
+
 module.exports = router;

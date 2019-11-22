@@ -11,24 +11,24 @@
 <div> {{#each addsinfo}}
 
 
-  <table>
+  <table class="maintable3">
     
-    <tr>
-      <th><a href="/ad/{{this.id}}">
+    <tr class="maintable3">
+      <th class="maintable3"><a href="/ad/{{this.id}}">
         {{this.title}}
       </a></th>
-      <th>{{this.district}}</th>
-      <th>{{this.city}}</th>
+      <th class="maintable3">{{this.district}}</th>
+      <th class="maintable3">{{this.city}}</th>
       {{!-- <th><button>Посмотреть отклики</button></th> --}}
     </tr>
 
 {{#each this.responses}}
 
-    <tr>
+    <tr class="maintable3">
      
-      <td class="bright">{{this.authorName}}</td >
-      <td>{{this.price}}</td>
-      <td class="change">
+      <td class="maintable3">{{this.authorName}}</td >
+      <td class="maintable3">{{this.price}}</td>
+      <td class="change maintable3"">
         
 <form  method="post" action="/ad/{{this.id}}"> <input class="change" id="tableinp2" type="submit" value="Выбрать поставщика" tabindex="3"
         class={{this.id}}>
