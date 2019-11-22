@@ -23,7 +23,7 @@ router.get("/", async function(req, res, next) {
     res.render("entries/index", {
       // entries,
       listCategories:uniqueEntriesObj,
-      Logger: "Sign out",
+      Logger: "Выход",
       loginout: "/signout",
       yourprofile: "/yourprofile",
       yourname: req.cookies.user
@@ -32,10 +32,10 @@ router.get("/", async function(req, res, next) {
     res.render("entries/index", {
       // entries,
       listCategories:uniqueEntriesObj,
-      Logger: "Register",
+      Logger: "Регистрация",
       loginout: "/registration",
       yourprofile: "/signin",
-      yourname: "Sign in"
+      yourname: "Вход"
     });
   }
 });
