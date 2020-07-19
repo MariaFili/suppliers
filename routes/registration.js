@@ -1,19 +1,37 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const User = require('../models/users');
-
-
+const User = require("../models/users");
 
 // registration
-router.get('/', function (req, res) {
-    
-    res.render('registration');
+router.get("/", function(req, res) {
+  res.render("registration");
 });
 
-router.post('/redir', async function (req, res, next) {
-    res.cookie('user', req.body.name);
-    newUser = new User({ name: req.body.name, password: req.body.password }).save();
-    res.redirect(`../entries`);
+router.post("/redir", async function(req, res, next) {
+  // console.log("here in registration/redir");
+  // console.log("body", req.body);
+
+  res.cookie("user", req.body.login);
+  //  чтобы true/false не ломалось
+  let buyerInput = false;
+  if (req.body.buyer === true) {
+    buyerInput = true;
+  }
+  await new User({
+    login: req.body.login,
+    password: req.body.password,
+    buyer: buyerInput,
+    advertisements: [],
+    responses: [],
+    info: {
+      phone: req.body.phone,
+      email: req.body.email,
+      inn: req.body.inn,
+      companyname: req.body.companyname
+    }
+  }).save();
+
+  res.redirect(`../entries`);
 });
 
 // //new entries
@@ -29,7 +47,7 @@ router.post('/redir', async function (req, res, next) {
 
 // router.put('/:id', async function (req, res, next) {
 //     let entry = await Entry.findById(req.params.id);
- 
+
 //     entry.title = req.body.title;
 //     entry.body = req.body.body;
 //     await entry.save();

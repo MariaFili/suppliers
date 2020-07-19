@@ -5,7 +5,7 @@
       <link rel="stylesheet" href="/stylesheets/application.css">
 
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-      <script src="/js/application.js"></script>
+      {{!-- <script src="/js/application.js"></script> --}}
 
       <title >SUPPLIERS MARKETPLACE</title>
   </head>
@@ -15,7 +15,7 @@
           <div class="max-w-700 center wrap-float">
               <nav class="clearfix mar-b-1">
                   <ul class="no-bullets no-margin no-padding right">
-                      <li class="pipe-separate t-light-green left"><a href="/">Home</a></li>
+                      <li class="pipe-separate t-light-green left"><a href="/">Главная</a></li>
                       <li class="pipe-separate t-light-green left"><a href={{yourprofile}}>{{yourname}}</a></li>
                       <li class="pipe-separate t-light-green left"><a id='togl' href={{loginout}}>{{Logger}}</a></li>
                   </ul>
@@ -32,6 +32,6 @@
             {{{body}}}
           </div>
       </div>
-      <script src="/routes/entries.js"></script>
+      {{!-- <script src="/routes/entries.js"></script> --}}
   </body>
 </html>

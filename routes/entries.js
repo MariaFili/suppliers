@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Entry = require("../models/entry");
 const Advertisement = require("../models/ads");
-console.log("started entries");
+
 
 // entries
 router.get("/", async function(req, res, next) {
@@ -17,15 +17,13 @@ router.get("/", async function(req, res, next) {
       uniqueEntriesObj.push(obj)
     }
   });
-  console.log("entries", entries);
-  console.log("uniqueEntries", uniqueEntries);
+  
   if (typeof req.cookies.user !== "undefined") {
-    console.log(req.cookies.user);
 
     res.render("entries/index", {
       // entries,
       listCategories:uniqueEntriesObj,
-      Logger: "Sign out",
+      Logger: "Выход",
       loginout: "/signout",
       yourprofile: "/yourprofile",
       yourname: req.cookies.user
@@ -34,10 +32,10 @@ router.get("/", async function(req, res, next) {
     res.render("entries/index", {
       // entries,
       listCategories:uniqueEntriesObj,
-      Logger: "Register",
+      Logger: "Регистрация",
       loginout: "/registration",
       yourprofile: "/signin",
-      yourname: "Sign in"
+      yourname: "Вход"
     });
   }
 });
@@ -53,8 +51,8 @@ router.get("/new", function(req, res, next) {
 });
 
 //detail entry
-router.get("/:id", async function(req, res, next) {
-  let entry = await Entry.findById(req.params.id);
+router.get("/:id", async function (req, res, next) {
+  // let entry = await Entry.findById(req.params.id);
   res.render("entries/show", { entry });
 });
 

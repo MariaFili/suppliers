@@ -1,22 +1,35 @@
-<h1>{{this.name}}</h1>
 
-<p>Категория</p>
- <input type="checkbox" name="option2" value="a2">Только актуальные <Br>
-<p>Выгрузка из Монги всех объявлений каждой категории</p>
-<a href="/article">Первое объявление </a>
+<h2>Категория {{name}}</h2>
+
+  <table class="title">
+    
+    <tr class="title">
+
+      <th class="maintable2 title">Объявление</th>
+      <th class="maintable2 title">Компания</th>
+      <th class="maintable2 title">Округ</th>
+      <th class="maintable2 title">Город</th>
+      <th class="maintable2 title">Дата</th>
+    </tr>
 
 
-<ul>
-  {{#each this.advertisements}}
-  <li>
-    <div>
-      <a>
-        <a href="/{{this.category}}/{{this.id}}">Name: {{this.title}} </a>
-        <div>Description: {{this.description}}</div>
-        <div>Location: {{this.district}}</div>
-        <div>Expiring date: {{this.expDate}}</div>
-    </div>
-  </li>
-  </div>
+  </table>
+  <div>{{#each allCategories}}
+  <table class="maintable2">
+    
+    <tr class="maintable2">
+
+      <th class="maintable2"> 
+        <a href="/ad/{{this._id}}">
+        {{this.title}}
+      </a></th>
+      <th class="maintable2">{{this.author.info.companyname}}</th>
+      <th class="maintable2">{{this.district}}</th>
+      <th class="maintable2">{{this.city}}</th>
+      <th class="maintable2">{{this.expdate}}</th>
+    </tr>
+
+
+  </table>
+
   {{/each}}
-</ul>

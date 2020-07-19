@@ -1,4 +1,4 @@
-<h1>Registrarion</h1>
+<h1>Регистрация</h1>
 
 {{#if errors}}
     <span>Something went wrong:</span>
@@ -11,23 +11,27 @@
 
 
 <form method="post" action="/registration/redir">
-  <label for="title-input" class="block mar-b-1">Login</label>
-  <input id="one" name="name" type="text" value="{{Login}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
+  <label for="title-input" class="block mar-b-1">Логин</label>
+  <input id="one" name="login" type="text" value="{{login}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
 
-  <label for="body-textarea" class="block mar-b-1">Password</label>
-  <input id="two" name="password" type="text" value="{{pswrd}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
+  <label for="body-textarea" class="block mar-b-1">Пароль</label>
+  <input id="two" name="password" type="text" value="{{password}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
 
-  <label for="body-textarea" class="block mar-b-1">Phone</label>
-  <input id="two" name="password" type="text" value="{{phn}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
+  <label for="body-textarea" class="block mar-b-1">Вы заказчик?</label>
+  <input id="two" name="buyer" type="text" value="{{buyer}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
 
-  <label for="body-textarea" class="block mar-b-1">Email</label>
-  <input id="two" name="password" type="text" value="{{mail}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
+  <label for="body-textarea" class="block mar-b-1">Телефон</label>
+  <input id="two" name="phone" type="text" value="{{phone}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
 
-  <label for="body-textarea" class="block mar-b-1">Company name</label>
-  <input id="two" name="password" type="text" value="{{name}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
+  <label for="body-textarea" class="block mar-b-1">Электронная почта</label>
+  <input id="two" name="email" type="text" value="{{email}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
+  
+  <label for="body-textarea" class="block mar-b-1">ИНН</label>
+  <input id="two" name="inn" type="text" value="{{inn}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
 
-  <label for="body-textarea" class="block mar-b-1">INN</label>
-  <input id="two" name="password" type="text" value="{{inn}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
+  <label for="body-textarea" class="block mar-b-1">Компания</label>
+  <input id="two" name="companyname" type="text" value="{{companyname}}" tabindex="1" class="block w-100 no-outline no-border pad-1 mar-b-2">
 
-  <input type="submit" value="Register" tabindex="3" class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline">
+
+  <input type="submit" value="Зарегистрироваться" tabindex="3" class="block button w-100 mar-t-4 mar-b-3 pad-2 round-1 text-c center no-border no-outline bigbutton">
 </form>
